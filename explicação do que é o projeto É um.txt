@@ -1,0 +1,23 @@
+explicação do que é o projeto: É um projeto que ajuda facilitar a vida de alunos que tem dificuldade de lembrar de trabalhos, projetos, aulas, datas importantes e etc.
+
+Público alvo: O projeto é voltado para alunos de diferentes níveis de ensino que precisam de suporte para gerenciar suas tarefas acadêmicas
+
+problemas: 
+
+ESQUECER O PRAZO- Muitas pessoas esquecem de entregar trabalhos ou tarefas porque têm muitas coisas para lembrar. O projeto manda lembretes e ajuda a manter tudo organizado, para que nada seja esquecido.
+
+FALTA DE PLANEJAMENTO- Muitos alunos não planejam suas atividades e acabam fazendo tudo de última hora. O sistema ajuda a organizar o tempo, criando uma rotina mais fácil e sem correria.
+
+João victor fontes azevedo 
+202402207253
+
+Samuel Bruno Souza Silva
+202409166285 
+
+Jonathan Sabino Pedrosa - 202403427011
+
+joão Dalyson
+202404264505
+
+Reinaldo José Messias dos Santos
+202404277461
