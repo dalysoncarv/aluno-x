@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AlunoX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="https://cdn.discordapp.com/attachments/1288177903166554212/1293021432867061851/606106-letra-x-logotipo-modelo-de-conceito-de-design-de-logotipo-roxo-vetor-removebg-preview_1.png?ex=6705db8c&is=67048a0c&hm=021bb82ad01ff8e6fd61dd3c34b7aaffc6940f6d4799a5f48567b9d7d1d0f3d6&" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .input-container {
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .icon {
+            position: absolute;
+            top: 45px;
+            left: 10px;
+            transform: translateY(-50%);
+            pointer-events: none; /* Evita interferência no clique no campo de input */
+        }
+
+        .forgot-password,
+        .signup-link p {
+            text-align: center;
+            margin-top: 0.5rem;
+            color: #007BFF;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto 1rem; /* Centraliza a logo e adiciona uma margem inferior */
+            width: 80%; /* Ajuste a largura conforme necessário */
+            max-width: 200px; /* Largura máxima para responsividade */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form class="login-form" onsubmit="return validateForm()">
+            <img class="logo" src="https://cdn.discordapp.com/attachments/1288177903166554212/1293021432867061851/606106-letra-x-logotipo-modelo-de-conceito-de-design-de-logotipo-roxo-vetor-removebg-preview_1.png?ex=6705db8c&is=67048a0c&hm=021bb82ad01ff8e6fd61dd3c34b7aaffc6940f6d4799a5f48567b9d7d1d0f3d6& alt="Logo AlunoX">
+            <h1>Entrar na plataforma</h1>
+
+            <div class="input-container">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="Email" required aria-label="Email">
+                <img class="icon" width="20" height="20" src="https://img.icons8.com/ios/50/user--v1.png" alt="user icon">
+            </div>
+
+            <div class="input-container">
+                <label for="password">Senha</label>
+                <input id="password" type="password" placeholder="Senha" required aria-label="Senha">
+                <img class="icon" width="20" height="20" src="https://img.icons8.com/ios/50/lock--v1.png" alt="lock icon">
+                <input type="checkbox" id="show-password" onclick="togglePassword()"> Mostrar Senha
+            </div>
+
+            <a href="senha.html" class="forgot-password">Esqueci minha senha</a>
+
+            <button type="submit" class="btn">Entrar</button>
+
+            <div class="signup-link">
+                <p>Não está cadastrado? <a href="cadastro.html">Cadastrar</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            const emailField = document.getElementById('email');
+            const passwordField = document.getElementById('password');
+
+            if (!emailField.value || !passwordField.value) {
+                alert('Por favor, preencha todos os campos.');
+                return false;
+            }
+            return true;
+        }
+
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            passwordField.type = passwordField.type === 'password' ? 'text' : 'password';
+        }
+    </script>
+</body>
+
+</html>

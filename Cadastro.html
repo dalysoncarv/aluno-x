@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cadastro - Plataforma</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://cdn.discordapp.com/attachments/1288177903166554212/1293021432867061851/606106-letra-x-logotipo-modelo-de-conceito-de-design-de-logotipo-roxo-vetor-removebg-preview_1.png?ex=6705db8c&is=67048a0c&hm=021bb82ad01ff8e6fd61dd3c34b7aaffc6940f6d4799a5f48567b9d7d1d0f3d6&" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .input-container {
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .icon {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 0.5rem;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 1rem;
+            color: #007BFF;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form class="register-form" onsubmit="return validateForm()">
+            <h1>Cadastrar na plataforma</h1>
+
+            <div class="input-container">
+                <label for="fullname">Nome completo</label>
+                <input id="fullname" type="text" placeholder="Nome completo" required aria-label="Nome completo">
+                <img class="icon" width="20" height="20" src="https://img.icons8.com/ios/50/user--v1.png" alt="user icon">
+            </div>
+
+            <div class="input-container">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="Email" required aria-label="Email">
+                <img class="icon" width="20" height="20" src="https://img.icons8.com/ios/50/email--v1.png" alt="email icon">
+            </div>
+
+            <div class="input-container">
+                <label for="password">Senha</label>
+                <input id="password" type="password" placeholder="Senha" required aria-label="Senha">
+                <img class="icon" width="20" height="20" src="https://img.icons8.com/ios/50/lock--v1.png" alt="lock icon">
+                <input type="checkbox" id="show-password" onclick="togglePassword()"> Mostrar Senha
+            </div>
+
+            <button type="submit" class="btn">Cadastrar</button>
+
+            <div class="login-link">
+                <p>Já tem uma conta? <a href="index.html">Entrar</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            const fullnameField = document.getElementById('fullname');
+            const emailField = document.getElementById('email');
+            const passwordField = document.getElementById('password');
+
+            // Verificação simples para garantir que todos os campos estejam preenchidos
+            if (!fullnameField.value || !emailField.value || !passwordField.value) {
+                alert('Por favor, preencha todos os campos.');
+                return false;
+            }
+
+            // Validação de formato de e-mail (opcional)
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(emailField.value)) {
+                alert('Por favor, insira um email válido.');
+                return false;
+            }
+
+            return true;
+        }
+
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            passwordField.type = passwordField.type === 'password' ? 'text' : 'password';
+        }
+    </script>
+</body>
+
+</html>
